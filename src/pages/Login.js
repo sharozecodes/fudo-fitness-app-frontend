@@ -1,11 +1,12 @@
 import React from "react";
 import NavBar from "../components/NavBar";
+import LoginForm from "../components/LoginForm";
 
 function Login() {
   return (
     <div>
       <NavBar />
-      <h1>Login Page</h1>
+      <LoginForm />
     </div>
   );
 }
