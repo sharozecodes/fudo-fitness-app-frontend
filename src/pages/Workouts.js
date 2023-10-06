@@ -19,7 +19,7 @@ function Workouts() {
         <p>Category: {workout.category}</p>
         <p>Duration: {workout.duration} minutes</p>
         <p>Calories Burnt: {workout.calories_burnt} kcal</p>
-        <Card.Text>{workout.instructions}</Card.Text>
+        <Card.Text>{workout.description}</Card.Text>
         <Button variant="primary">Go somewhere</Button>
       </Card.Body>
     </Card>
