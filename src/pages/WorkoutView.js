@@ -16,17 +16,20 @@ function WorkoutView() {
   }, [id]);
 
   return workout ? (
-    <Card key={workout.id} style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={workout.image_url} />
-      <Card.Body>
-        <Card.Title>{workout.title}</Card.Title>
-        <p>Category: {workout.category}</p>
-        <p>Duration: {workout.duration} minutes</p>
-        <p>Calories Burnt: {workout.calories_burnt} kcal</p>
-        <Card.Text>{workout.instructions}</Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
+    <div className="center-content">
+      <img src={workout.image_url} alt={workout.title} />
+      <h2>{workout.title}</h2>
+      <p>Category: {workout.category}</p>
+      <p>Duration: {workout.duration} minutes</p>
+      <p>Calories Burnt: {workout.calories_burnt} kcal</p>
+      <div>
+        <strong>Instructions:</strong>
+        {workout.instructions.split("\n").map((line, index) => (
+          <p key={index}>{line}</p>
+        ))}
+      </div>
+      <button>Go somewhere</button>
+    </div>
   ) : (
     <></>
   );

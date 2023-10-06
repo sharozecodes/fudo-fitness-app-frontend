@@ -41,3 +41,11 @@ body {
   background: #000 !important;
   color: white !important;
 }
+
+.center-content {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Vertically center */
+  align-items: center; /* Horizontally center */
+  min-height: 100vh;
+}
