@@ -62,5 +62,9 @@ body {
 }
 
 .card {
-  
+  width: 18rem;
+  height: 400px;
+  background: black !important;
+  color: white !important;
+  text-decoration: none !important;
 }

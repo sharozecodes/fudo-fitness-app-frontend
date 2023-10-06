@@ -13,8 +13,15 @@ function Workouts() {
   }, []);
 
   const workoutsArray = workouts.map((workout) => (
-    <Link to={`/workouts/${workout.id}`}>
-      <Card key={workout.id} className="card" style={{ width: "18rem" }}>
+    <Link
+      style={{
+        textDecoration: "none",
+        textAlign: "center",
+        flexGrow: "1",
+      }}
+      to={`/workouts/${workout.id}`}
+    >
+      <Card key={workout.id} className="card">
         <Card.Img variant="top" src={workout.image_url} />
         <Card.Body>
           <Card.Title>{workout.title}</Card.Title>
