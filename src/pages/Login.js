@@ -1,15 +1,12 @@
 import React from "react";
-import NavBar from "../components/NavBar";
 import LoginForm from "../components/LoginForm";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
-import SignUp from "./SignUp";
 
 function Login({ onLogin }) {
   const [showLogin, setShowLogin] = useState(true);
   return (
     <div>
-      <NavBar />
       {showLogin ? (
         <>
           <LoginForm onLogin={onLogin} />
@@ -33,7 +30,7 @@ function Login({ onLogin }) {
         //     </Button>
         //   </p>
         // </>
-        <SignUp />
+        <>SIGN UP PLEASE!!!</>
       )}
     </div>
   );
