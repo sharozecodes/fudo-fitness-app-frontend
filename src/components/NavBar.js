@@ -10,6 +10,9 @@ function NavBar() {
       <NavLink exact to="/login" activeClassName="active">
         Login
       </NavLink>
+      <NavLink exact to="/signup" activeClassName="active">
+        Signup
+      </NavLink>
     </div>
   );
 }
