@@ -44,8 +44,19 @@ body {
 
 .center-content {
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  justify-content: center; /* Vertically center */
-  align-items: center; /* Horizontally center */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
+}
+
+.img-container {
+  width: 800px; /* Adjust to your desired width */
+  height: 500px; /* Adjust to your desired height */
+  overflow: hidden; /* Ensures the image doesn't overflow the container */
+}
+.img-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Controls how the image fits inside the container */
 }

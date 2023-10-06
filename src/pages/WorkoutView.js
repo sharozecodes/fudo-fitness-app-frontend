@@ -17,7 +17,9 @@ function WorkoutView() {
 
   return workout ? (
     <div className="center-content">
-      <img src={workout.image_url} alt={workout.title} />
+      <div className="img-container">
+        <img src={workout.image_url} alt={workout.title} />
+      </div>
       <h2>{workout.title}</h2>
       <p>Category: {workout.category}</p>
       <p>Duration: {workout.duration} minutes</p>
