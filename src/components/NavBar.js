@@ -7,6 +7,9 @@ function NavBar() {
       <NavLink exact to="/" activeClassName="active">
         Home
       </NavLink>
+      <NavLink exact to="/login" activeClassName="active">
+        Login
+      </NavLink>
     </div>
   );
 }
