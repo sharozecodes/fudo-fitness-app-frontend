@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Workouts from "../pages/Workouts";
+import WorkoutView from "../pages/WorkoutView";
 
 function App() {
   return (
@@ -15,7 +16,10 @@ function App() {
         <Route path="/login" element={<Login />} />
       </Routes>
       <Routes>
-        <Route path="/signup" element={<Workouts />} />
+        <Route path="/workouts" element={<Workouts />} />
+      </Routes>
+      <Routes>
+        <Route path="/workouts/:id" element={<WorkoutView />} />
       </Routes>
     </div>
   );
