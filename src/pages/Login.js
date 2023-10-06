@@ -2,18 +2,39 @@ import React from "react";
 import NavBar from "../components/NavBar";
 import LoginForm from "../components/LoginForm";
 import Button from "react-bootstrap/Button";
+import { useState } from "react";
+import SignUp from "./SignUp";
 
-function Login() {
+function Login({ onLogin }) {
+  const [showLogin, setShowLogin] = useState(true);
   return (
     <div>
       <NavBar />
-      <LoginForm />
-      <p style={{ marginTop: "2em" }}>
-        Don't have an account?{" "}
-        <span style={{ marginRight: "10px" }}>
-          <Button variant="secondary">Signup</Button>
-        </span>
-      </p>
+      {showLogin ? (
+        <>
+          <LoginForm onLogin={onLogin} />
+          <p style={{ marginTop: "2em" }}>
+            Don't have an account?{" "}
+            <span style={{ marginRight: "10px" }}>
+              <Button variant="secondary" onClick={() => setShowLogin(false)}>
+                Signup
+              </Button>
+            </span>
+          </p>
+        </>
+      ) : (
+        // <>
+        //   <SignUpForm onLogin={onLogin} />
+        //   <Divider />
+        //   <p>
+        //     Already have an account? &nbsp;
+        //     <Button color="secondary" onClick={() => setShowLogin(true)}>
+        //       Log In
+        //     </Button>
+        //   </p>
+        // </>
+        <SignUp />
+      )}
     </div>
   );
 }
