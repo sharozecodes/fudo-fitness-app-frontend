@@ -14,7 +14,7 @@ function Workouts() {
 
   const workoutsArray = workouts.map((workout) => (
     <Link to={`/workouts/${workout.id}`}>
-      <Card key={workout.id} style={{ width: "18rem" }}>
+      <Card key={workout.id} className="card" style={{ width: "18rem" }}>
         <Card.Img variant="top" src={workout.image_url} />
         <Card.Body>
           <Card.Title>{workout.title}</Card.Title>

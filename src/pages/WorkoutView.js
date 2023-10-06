@@ -33,7 +33,9 @@ function WorkoutView() {
       <button>Go somewhere</button>
     </div>
   ) : (
-    <></>
+    <div className="center-content">
+      <p>Sorry, the workout data is not available.</p>
+    </div>
   );
 }
 
