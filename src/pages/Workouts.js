@@ -16,6 +16,9 @@ function Workouts() {
       <Card.Img variant="top" src={workout.image_url} />
       <Card.Body>
         <Card.Title>{workout.title}</Card.Title>
+        <p>Category: {workout.category}</p>
+        <p>Duration: {workout.duration} minutes</p>
+        <p>Calories Burnt: {workout.calories_burnt} kcal</p>
         <Card.Text>{workout.instructions}</Card.Text>
         <Button variant="primary">Go somewhere</Button>
       </Card.Body>
