@@ -1,10 +1,29 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 
 function Workouts() {
+  const [workouts, setWorkouts] = useState([]);
+
+  useEffect(() => {
+    fetch("/workouts")
+      .then((r) => r.json())
+      .then(setWorkouts);
+  }, []);
+
+  const workoutsArray = workouts.map((workout) => (
+    <Card key={workout.id} style={{ width: "18rem" }}>
+      <Card.Img variant="top" src={workout.image_url} />
+      <Card.Body>
+        <Card.Title>{workout.title}</Card.Title>
+        <Card.Text>{workout.instructions}</Card.Text>
+        <Button variant="primary">Go somewhere</Button>
+      </Card.Body>
+    </Card>
+  ));
+
   return (
-    <div>
-      <h1>Workouts Page</h1>
-    </div>
+    <div style={{ display: "flex", flexWrap: "wrap" }}>{workoutsArray}</div>
   );
 }
 
