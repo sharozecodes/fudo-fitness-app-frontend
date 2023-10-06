@@ -1,3 +1,4 @@
+import "../components_css/NavBar.css";
 import React from "react";
 import { Link } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
@@ -8,8 +9,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function NavBar() {
   return (
     <div className="navbar">
-      <Navbar bg="dark" data-bs-theme="dark">
-        <Container>
+      <Navbar bg="dark" data-bs-theme="dark" className="navbar-custom">
+        <Container fluid>
           <Navbar.Brand as={Link} to="/">
             Fudo - Your Fitness Guide
           </Navbar.Brand>
