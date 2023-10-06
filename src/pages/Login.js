@@ -8,9 +8,11 @@ function Login() {
     <div>
       <NavBar />
       <LoginForm />
-      <p>
-        Don't have an account? &nbsp;
-        <Button color="secondary">Sign Up</Button>
+      <p style={{ marginTop: "2em" }}>
+        Don't have an account?{" "}
+        <span style={{ marginRight: "10px" }}>
+          <Button variant="secondary">Signup</Button>
+        </span>
       </p>
     </div>
   );
