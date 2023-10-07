@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Workouts from "../pages/Workouts";
 import WorkoutView from "../pages/WorkoutView";
+import Signup from "../pages/Signup";
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/login" element={<Login />} />
+      </Routes>
+      <Routes>
+        <Route path="/signup" element={<Signup />} />
       </Routes>
       <Routes>
         <Route path="/workouts" element={<Workouts />} />
