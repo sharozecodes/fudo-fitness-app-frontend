@@ -7,12 +7,10 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 
 function NavBar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true); // State to track login status
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track login status
   const username = "John Doe"; // Replace with the actual username if logged in
 
   const handleLogout = () => {
-    // Implement logout logic here
-    // For example, you can clear the user's session or token
     setIsLoggedIn(false);
   };
 
@@ -37,14 +35,16 @@ function NavBar() {
           <div>
             {isLoggedIn ? (
               <div className="user-info">
-                <span className="user-name">{username}</span>
-                <Button variant="danger" onClick={handleLogout}>
+                <span className="user-name-with-space">👤: {username}</span>
+                <Button variant="secondary" onClick={handleLogout}>
                   Logout
                 </Button>
               </div>
             ) : (
-              <Nav.Link as={Link} to="/login">
-                Login
+              <Nav.Link as={Link} to="/login" className="ml-auto">
+                <Button variant="primary" onClick={handleLogout}>
+                  Login
+                </Button>
               </Nav.Link>
             )}
           </div>

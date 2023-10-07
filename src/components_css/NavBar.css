@@ -1,5 +1,7 @@
-
 .navbar-custom {
-    width: 100%;
-  }
-  
+  width: 100%;
+}
+
+.user-name-with-space {
+  margin-right: 15px;
+}
