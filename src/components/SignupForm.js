@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
-function SignUpForm({ onLogin }) {
+function SignUpForm({ setShowLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [name, setName] = useState("");
-  const [dateOfBirth, setdateOfBirth] = useState("");
-  const [weight, setweight] = useState("");
-  const [height, setheight] = useState("");
+
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [usernameExists, setUsernameExists] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -29,17 +28,16 @@ function SignUpForm({ onLogin }) {
         username,
         password,
         name,
-        date_of_birth: dateOfBirth,
-        weight,
-        height,
       }),
     }).then((r) => {
       setIsLoading(false);
       if (r.ok) {
-        r.json().then((user) => onLogin(user));
+        r.json().then(() => {
+          setShowLogin(true);
+        });
       } else if (r.status === 208) {
         // Handle status 208 here
-        setErrors(["User is already logged in."]);
+        setUsernameExists(true);
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
@@ -106,6 +104,18 @@ function SignUpForm({ onLogin }) {
           </div>
         ))}
       </div>{" "}
+      {usernameExists && (
+        <div className="alert alert-danger">
+          Username already exists. Please choose a different one.
+        </div>
+      )}
+      <div className="form-group">
+        {errors.map((err) => (
+          <div key={err} className="alert alert-danger">
+            {err}
+          </div>
+        ))}
+      </div>
     </form>
   );
 }
