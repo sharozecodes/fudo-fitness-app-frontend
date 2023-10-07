@@ -2,6 +2,7 @@ import React from "react";
 import LoginForm from "../components/LoginForm";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
+import SignUpForm from "../components/SignupForm";
 
 function Login({ onLogin }) {
   const [showLogin, setShowLogin] = useState(true);
@@ -20,17 +21,7 @@ function Login({ onLogin }) {
           </p>
         </>
       ) : (
-        // <>
-        //   <SignUpForm onLogin={onLogin} />
-        //   <Divider />
-        //   <p>
-        //     Already have an account? &nbsp;
-        //     <Button color="secondary" onClick={() => setShowLogin(true)}>
-        //       Log In
-        //     </Button>
-        //   </p>
-        // </>
-        <>SIGN UP PLEASE!!!</>
+        <SignUpForm />
       )}
     </div>
   );

@@ -22,14 +22,20 @@ function Workouts() {
       to={`/workouts/${workout.id}`}
     >
       <Card key={workout.id} className="card">
-        <Card.Img variant="top" src={workout.image_url} />
+        <Card.Img
+          style={{ height: "200px", width: "auto" }}
+          variant="top"
+          src={workout.image_url}
+        />
         <Card.Body>
-          <Card.Title>{workout.title}</Card.Title>
+          <Card.Title>
+            <strong>{workout.title}</strong>
+          </Card.Title>
           <p>Category: {workout.category}</p>
           <p>Duration: {workout.duration} minutes</p>
           <p>Calories Burnt: {workout.calories_burnt} kcal</p>
           <Card.Text>{workout.description}</Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Button variant="primary">Add to Preferences</Button>
         </Card.Body>
       </Card>
     </Link>
