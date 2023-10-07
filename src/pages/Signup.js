@@ -127,6 +127,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 function SignUpForm() {
+  const [loggedIn, setLoggedIn] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const initialValues = {
     username: "",
