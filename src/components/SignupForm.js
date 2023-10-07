@@ -37,6 +37,9 @@ function SignUpForm({ onLogin }) {
       setIsLoading(false);
       if (r.ok) {
         r.json().then((user) => onLogin(user));
+      } else if (r.status === 208) {
+        // Handle status 208 here
+        setErrors(["User is already logged in."]);
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
@@ -86,50 +89,6 @@ function SignUpForm({ onLogin }) {
           id="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="dateOfBirth">Date of Birth</label>
-        <input
-          type="date"
-          className="form-control"
-          id="dateOfBirth"
-          value={dateOfBirth}
-          onChange={(e) => setdateOfBirth(e.target.value)}
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="weight">Weight (lbs)</label>
-        <input
-          type="number"
-          className="form-control"
-          id="weight"
-          value={weight}
-          onChange={(e) => {
-            if (parseInt(e.target.value) > 500) {
-              e.target.value = "500";
-            }
-            setweight(e.target.value);
-          }}
-          min="1"
-          max="500"
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="height">Height (cm)</label>
-        <input
-          type="number"
-          className="form-control"
-          id="height"
-          value={height}
-          onChange={(e) => {
-            if (parseInt(e.target.value) > 300) {
-              e.target.value = "300";
-            }
-            setheight(e.target.value);
-          }}
-          min="1"
-          max="300"
         />
       </div>
       <div className="form-group">
