@@ -122,13 +122,15 @@
 
 // export default SignUpForm;
 
-import React, { useState } from "react";
+import React, { useState } from "react"; // Import useState
 import { useFormik } from "formik";
+import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 
-function SignUpForm() {
-  const [loggedIn, setLoggedIn] = useState(false);
+function SignUp({ loggedIn, setLoggedIn }) {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate(); // Use useNavigate correctly
+
   const initialValues = {
     username: "",
     password: "",
@@ -152,7 +154,8 @@ function SignUpForm() {
       });
 
       if (response.ok) {
-        // Successful signup logic (redirect, show success message, etc.)
+        setLoggedIn(true);
+        navigate("/"); // Correctly navigate to the login page
       } else {
         // Handle errors from the server
         const errorData = await response.json();
@@ -178,7 +181,6 @@ function SignUpForm() {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
-
   return (
     <form onSubmit={formik.handleSubmit}>
       <div className="form-group">
@@ -243,4 +245,4 @@ function SignUpForm() {
   );
 }
 
-export default SignUpForm;
+export default SignUp;

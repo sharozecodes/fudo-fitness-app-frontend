@@ -56,14 +56,13 @@
 // }
 
 // export default Login;
-
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Button from "react-bootstrap/Button";
-import { Navigate } from "react-router";
+import { useNavigate } from "react-router-dom"; // Assuming you're using React Router v6
 
-function Login({ userLogin, setUserLogin }) {
+function Login({ loggedIn, setLoggedIn }) {
   const initialValues = {
     username: "",
     password: "",
@@ -73,6 +72,8 @@ function Login({ userLogin, setUserLogin }) {
     username: Yup.string().required("Username is required"),
     password: Yup.string().required("Password is required"),
   });
+
+  const navigate = useNavigate(); // Get the navigate function from React Router
 
   const handleSubmit = async (values, { setSubmitting, setStatus }) => {
     try {
@@ -91,6 +92,8 @@ function Login({ userLogin, setUserLogin }) {
       }
 
       // Handle successful login here.
+      setLoggedIn(true);
+      navigate("/"); // Navigate to the home page after successful login
     } catch (error) {
       console.error("Login error:", error);
       setStatus("An error occurred during login.");
@@ -101,7 +104,7 @@ function Login({ userLogin, setUserLogin }) {
   return (
     <div>
       {" "}
-      {userLogin ? (
+      {loggedIn ? (
         <div>
           <h1 id="login-text">Please Enter Your Credentials</h1>
           <Formik
@@ -138,7 +141,7 @@ function Login({ userLogin, setUserLogin }) {
           </Formik>
         </div>
       ) : (
-        Navigate("/")
+        navigate("/") // Navigate to the home page if not logged in
       )}
     </div>
   );
