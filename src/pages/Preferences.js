@@ -14,25 +14,21 @@ function Preferences({ user }) {
       }}
       to={`/preferences/workouts`}
     >
-      {" "}
-      WORKOUT EOYEE
-      {/* <Card key={workout.id} className="card">
+      <Card className="card">
         <Card.Img
           style={{ height: "200px", width: "auto" }}
           variant="top"
-          src={workout.image_url}
+          src={
+            "https://www.planetfitness.com/sites/default/files/feature-image/break-workout_602724.jpg"
+          }
         />
         <Card.Body>
           <Card.Title>
-            <strong>{workout.title}</strong>
+            <strong>Workouts</strong>
           </Card.Title>
-          <p>Category: {workout.category}</p>
-          <p>Duration: {workout.duration} minutes</p>
-          <p>Calories Burnt: {workout.calories_burnt} kcal</p>
-          <Card.Text>{workout.description}</Card.Text>
-          <Button variant="primary">Add to Preferences</Button>
+          <Card.Text>Browse your workout preferences</Card.Text>
         </Card.Body>
-      </Card> */}
+      </Card>
     </Link>
   );
 
@@ -45,28 +41,21 @@ function Preferences({ user }) {
         flexGrow: "1",
       }}
     >
-      {" "}
-      RECIPEOYE
-      {/* 
-      <Card key={recipe.id} className="card">
+      <Card className="card">
         <Card.Img
           style={{ height: "200px", width: "auto" }}
           variant="top"
-          src={recipe.image_url}
+          src={
+            "https://www.usda.gov/sites/default/files/nal-eat-healthy-active-new-year-blog-010322.jpg"
+          }
         />
         <Card.Body>
           <Card.Title>
-            <strong>{recipe.title}</strong>
+            <strong>Recipes</strong>
           </Card.Title>
-          <p>Category: {recipe.category}</p>
-          <p>Preparation Time: {recipe.prep_time} minutes</p>
-          <p>Calories: {recipe.calories}</p>
-          <p>Protein: {recipe.protein} g</p>
-          <Card.Text>{recipe.description}</Card.Text>
-          <Button variant="primary">Add to Preferences</Button>
+          <Card.Text>Browse your recipe preferences</Card.Text>
         </Card.Body>
       </Card>
-      */}
     </Link>
   );
 
@@ -76,8 +65,11 @@ function Preferences({ user }) {
       <p>Please log in to see preferences</p>
     </div>
   ) : (
-    <div>
-      {workoutCard} {recipeCard}
+    <div className="centered-cards">
+      <div className="card-container">
+        {workoutCard}
+        {recipeCard}
+      </div>
     </div>
   );
 }
