@@ -3,13 +3,14 @@ import { useNavigate } from "react-router-dom";
 
 function Preferences({ user }) {
   const navigate = useNavigate();
-  if (!user) {
-    navigate("/login");
-  }
-  return user ? (
-    <div> Preferences</div>
+
+  return !user || user.error ? (
+    <div>
+      {navigate("/login")}
+      <p>Please log in to see preferences</p>
+    </div>
   ) : (
-    <p>Please log in to see preferences</p>
+    <div>Preferences</div>
   );
 }
 
