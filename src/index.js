@@ -1,19 +1,16 @@
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
+import "./index.css";
+import React from "react";
+import ReactDOM from "react-dom/client";
 import App from "./components/App";
+
+import { BrowserRouter as Router } from "react-router-dom"; // Import BrowserRouter and Routes
+
 import NavBar from "./components/NavBar";
-import { BrowserRouter as Router } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function Root() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  return (
-    <Router>
-      <NavBar isLoggedIn={isLoggedIn} />
-      <App isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-    </Router>
-  );
-}
-
-ReactDOM.createRoot(document.getElementById("root")).render(<Root />);
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <Router>
+    <NavBar />
+    <App />
+  </Router>
+);

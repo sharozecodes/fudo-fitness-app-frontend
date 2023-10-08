@@ -19,14 +19,8 @@ function App({ loggedIn, setLoggedIn }) {
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route
-          path="/login"
-          element={<Login loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
-        />
-        <Route
-          path="/signup"
-          element={<Signup loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
-        />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/workouts" element={<Workouts />} />
         <Route path="/workouts/:id" element={<WorkoutView />} />
       </Routes>
