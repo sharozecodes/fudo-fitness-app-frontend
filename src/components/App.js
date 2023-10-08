@@ -9,6 +9,8 @@ import Signup from "../pages/Signup";
 import Recipes from "../pages/Recipes";
 import RecipeView from "../pages/RecipeView";
 import Preferences from "../pages/Preferences";
+import WorkoutPreferences from "../pages/WorkoutPreferences";
+import RecipePreferences from "../pages/RecipePreferences";
 
 function App({ loggedIn, setLoggedIn, user }) {
   return (
@@ -28,6 +30,14 @@ function App({ loggedIn, setLoggedIn, user }) {
         <Route path="/workouts/:id" element={<WorkoutView />} />
         <Route path="/recipes/:id" element={<RecipeView />} />
         <Route path="/preferences" element={<Preferences user={user} />} />
+        <Route
+          path="/preferences/workouts"
+          element={<WorkoutPreferences user={user} />}
+        />
+        <Route
+          path="/preferences/recipes"
+          element={<RecipePreferences user={user} />}
+        />
       </Routes>
     </div>
   );
