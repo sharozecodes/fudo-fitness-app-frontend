@@ -38,6 +38,9 @@ function NavBar({ loggedIn, setLoggedIn, user }) {
             <Nav.Link as={Link} to="/recipes">
               Recipes
             </Nav.Link>
+            <Nav.Link as={Link} to="/preferences">
+              Preferences
+            </Nav.Link>
           </Nav>
           <div>
             {loggedIn ? (

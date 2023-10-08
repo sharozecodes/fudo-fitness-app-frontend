@@ -26,7 +26,7 @@ const Root = () => {
           localStorage.setItem("loggedIn", "true"); // Store the loggedIn state in localStorage
         }
       });
-  }, []);
+  }, [loggedIn]);
 
   return (
     <Router>
