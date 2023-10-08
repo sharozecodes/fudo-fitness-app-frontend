@@ -51,19 +51,19 @@ function NavBar({ setUser, user }) {
             </Nav.Link>
           </Nav>
           <div>
-            {user ? (
-              <div className="user-info">
-                <span className="user-name-with-space">👤: {user.name}</span>
-                <Button variant="secondary" onClick={handleLogout}>
-                  Logout
-                </Button>
-              </div>
-            ) : (
+            {!user || user.error ? (
               <Nav.Link as={Link} to="/login" className="ml-auto">
                 <Button variant="primary" onClick={handleLogout}>
                   Login
                 </Button>
               </Nav.Link>
+            ) : (
+              <div className="user-info">
+                <span className="user-name-with-space">👤: {user.name}</span>
+                <Button variant="secondary" onClick={handleLogout}>
+                  Logout {console.log(user)}
+                </Button>
+              </div>
             )}
           </div>
         </Container>

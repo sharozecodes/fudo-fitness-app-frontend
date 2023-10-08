@@ -9,10 +9,10 @@ import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Root = () => {
-  const storedLoggedIn = localStorage.getItem("loggedIn") === "true" || false;
+  const storedUser = localStorage.getItem("user");
 
-  const [loggedIn, setLoggedIn] = useState(storedLoggedIn);
-  const [user, setUser] = useState([]);
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     fetch("/check_session")
