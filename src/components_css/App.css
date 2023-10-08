@@ -78,3 +78,25 @@ body {
 .red-text {
   color: #f04747;
 }
+
+.app-title {
+  font-style: italic;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 10rem;
+}
+
+.centered-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.home-logo {
+  width: 200px;
+  height: auto;
+  margin-right: 10px;
+  padding: 0;
+}

@@ -18,6 +18,7 @@ function Login({ loggedIn, setLoggedIn }) {
   const navigate = useNavigate();
 
   const handleSubmit = async (values, { setSubmitting, setStatus }) => {
+    // e.preventDefault();
     console.log("Form values submitted by the user:", values);
     try {
       const response = await fetch("/login", {

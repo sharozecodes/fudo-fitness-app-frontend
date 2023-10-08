@@ -9,7 +9,6 @@ import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Root = () => {
-  // Use localStorage to get the initial loggedIn state
   const storedLoggedIn = localStorage.getItem("loggedIn") === "true" || false;
 
   const [loggedIn, setLoggedIn] = useState(storedLoggedIn);
@@ -23,7 +22,7 @@ const Root = () => {
 
         if (data.success) {
           setLoggedIn(true);
-          localStorage.setItem("loggedIn", "true"); // Store the loggedIn state in localStorage
+          localStorage.setItem("loggedIn", "true");
         }
       });
   }, [loggedIn]);
