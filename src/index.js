@@ -9,22 +9,28 @@ import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Root = () => {
-  const [loggedIn, setLoggedIn] = useState(false);
+  // Use localStorage to get the initial loggedIn state
+  const storedLoggedIn = localStorage.getItem("loggedIn") === "true" || false;
+
+  const [loggedIn, setLoggedIn] = useState(storedLoggedIn);
   const [user, setUser] = useState([]);
+
   useEffect(() => {
     fetch("/check_session")
       .then((r) => r.json())
       .then((data) => {
         setUser(data);
+
         if (data.success) {
           setLoggedIn(true);
+          localStorage.setItem("loggedIn", "true"); // Store the loggedIn state in localStorage
         }
       });
-  }, [loggedIn]);
+  }, []);
 
   return (
     <Router>
-      <NavBar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+      <NavBar loggedIn={loggedIn} setLoggedIn={setLoggedIn} user={user} />
       <App loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
     </Router>
   );

@@ -6,19 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 
-function NavBar({ loggedIn, setLoggedIn }) {
-  const [user, setUser] = useState([]);
-  useEffect(() => {
-    fetch("/check_session")
-      .then((r) => r.json())
-      .then((data) => {
-        setUser(data);
-        if (data.success) {
-          setLoggedIn(true);
-        }
-      });
-  }, [loggedIn]);
-
+function NavBar({ loggedIn, setLoggedIn, user }) {
   const handleLogout = () => {
     setLoggedIn(false);
     fetch("/logout", {
