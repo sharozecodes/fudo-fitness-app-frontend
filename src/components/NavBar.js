@@ -6,8 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 
-function NavBar() {
-  const [loggedIn, setLoggedIn] = useState(false);
+function NavBar({ loggedIn, setLoggedIn }) {
   const [user, setUser] = useState([]);
   useEffect(() => {
     fetch("/check_session")

@@ -3,8 +3,7 @@ import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 
-function SignUp() {
-  const [loggedIn, setLoggedIn] = useState(false);
+function SignUp({ loggedIn, setLoggedIn }) {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate(); // Use useNavigate correctly
 

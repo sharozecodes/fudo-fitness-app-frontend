@@ -4,8 +4,7 @@ import * as Yup from "yup";
 import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom"; // Assuming you're using React Router v6
 
-function Login() {
-  const [loggedIn, setLoggedIn] = useState(false);
+function Login({ loggedIn, setLoggedIn }) {
   const initialValues = {
     username: "",
     password: "",
