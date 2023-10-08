@@ -11,11 +11,29 @@ function NavBar({ loggedIn, setLoggedIn }) {
   useEffect(() => {
     fetch("/check_session")
       .then((r) => r.json())
-      .then(setUser);
+      .then((data) => {
+        setUser(data);
+        if (data.success) {
+          setLoggedIn(true);
+        }
+      });
   }, [loggedIn]);
 
   const handleLogout = () => {
     setLoggedIn(false);
+    fetch("/logout", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((r) => r.json())
+      .then(() => {
+        console.log("session successfully cleared");
+      })
+      .catch((error) => {
+        console.error("Logout failed:", error);
+      });
   };
 
   return (

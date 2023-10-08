@@ -1,5 +1,5 @@
 import "../components_css/App.css";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
@@ -11,13 +11,6 @@ import RecipeView from "../pages/RecipeView";
 import Preferences from "../pages/Preferences";
 
 function App({ loggedIn, setLoggedIn }) {
-  const [user, setUser] = useState([]);
-  useEffect(() => {
-    fetch("/check_session")
-      .then((r) => r.json())
-      .then(setUser);
-  }, [loggedIn]);
-
   return (
     <div>
       <Routes>
