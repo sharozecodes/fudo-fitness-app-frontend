@@ -32,7 +32,7 @@ function Login({ loggedIn, setLoggedIn }) {
         if (response.status === 401) {
           setStatus("Invalid username/password");
         } else {
-          setStatus("Incorrect Password");
+          setStatus("something went wrong");
         }
         setSubmitting(false);
       } else {
