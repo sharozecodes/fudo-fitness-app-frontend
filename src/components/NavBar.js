@@ -13,7 +13,6 @@ function NavBar({ loggedIn, setLoggedIn }) {
       .then((r) => r.json())
       .then(setUser);
   }, [loggedIn]);
-  // Replace with the actual username if logged in
 
   const handleLogout = () => {
     setLoggedIn(false);

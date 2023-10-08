@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./components/App";
 
-import { BrowserRouter as Router } from "react-router-dom"; // Import BrowserRouter and Routes
+import { BrowserRouter as Router } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";

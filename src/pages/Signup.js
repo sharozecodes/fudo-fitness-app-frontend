@@ -1,11 +1,11 @@
-import React, { useState } from "react"; // Import useState
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 
 function SignUp({ loggedIn, setLoggedIn }) {
   const [showPassword, setShowPassword] = useState(false);
-  const navigate = useNavigate(); // Use useNavigate correctly
+  const navigate = useNavigate();
 
   const initialValues = {
     username: "",
@@ -31,18 +31,15 @@ function SignUp({ loggedIn, setLoggedIn }) {
 
       if (response.ok) {
         setLoggedIn(true);
-        navigate("/"); // Correctly navigate to the login page
+        navigate("/");
       } else {
-        // Handle errors from the server
         const errorData = await response.json();
         if (errorData.usernameExists) {
           setFieldError("username", "Username already exists");
         } else {
-          // Handle other server errors
         }
       }
     } catch (error) {
-      // Handle network or other errors
     } finally {
       setSubmitting(false);
     }

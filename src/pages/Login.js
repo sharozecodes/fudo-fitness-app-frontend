@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Button from "react-bootstrap/Button";
-import { useNavigate } from "react-router-dom"; // Assuming you're using React Router v6
+import { useNavigate } from "react-router-dom";
 
 function Login({ loggedIn, setLoggedIn }) {
   const initialValues = {
@@ -15,7 +15,7 @@ function Login({ loggedIn, setLoggedIn }) {
     password: Yup.string().required("Password is required"),
   });
 
-  const navigate = useNavigate(); // Get the navigate function from React Router
+  const navigate = useNavigate();
 
   const handleSubmit = async (values, { setSubmitting, setStatus }) => {
     console.log("Form values submitted by the user:", values);
@@ -36,9 +36,8 @@ function Login({ loggedIn, setLoggedIn }) {
         }
         setSubmitting(false);
       } else {
-        // Handle successful login here.
         setLoggedIn(true);
-        navigate("/workouts"); // Navigate to the home page after successful login
+        navigate("/workouts");
       }
     } catch (error) {
       console.error("Login error:", error);
