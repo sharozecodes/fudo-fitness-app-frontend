@@ -6,8 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 
-function NavBar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track login status
+function NavBar({ isLoggedIn, setIsLoggedIn }) {
   const username = "John Doe"; // Replace with the actual username if logged in
 
   const handleLogout = () => {
