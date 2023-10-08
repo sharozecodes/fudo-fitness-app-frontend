@@ -29,8 +29,8 @@ const Root = () => {
 
   return (
     <Router>
-      <NavBar loggedIn={loggedIn} setLoggedIn={setLoggedIn} user={user} />
-      <App loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+      <NavBar setUser={setUser} user={user} />
+      <App loggedIn={loggedIn} setLoggedIn={setLoggedIn} user={user} />
     </Router>
   );
 };

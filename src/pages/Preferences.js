@@ -1,12 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function Preferences({ loggedIn }) {
+function Preferences({ user }) {
   const navigate = useNavigate();
-  if (!loggedIn) {
+  if (!user) {
     navigate("/login");
   }
-  return loggedIn ? (
+  return user ? (
     <div> Preferences</div>
   ) : (
     <p>Please log in to see preferences</p>

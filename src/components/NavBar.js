@@ -7,9 +7,9 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 
-function NavBar({ loggedIn, setLoggedIn, user }) {
+function NavBar({ setUser, user }) {
   const handleLogout = () => {
-    setLoggedIn(false);
+    setUser(null);
     fetch("/logout", {
       method: "DELETE",
       headers: {
@@ -51,7 +51,7 @@ function NavBar({ loggedIn, setLoggedIn, user }) {
             </Nav.Link>
           </Nav>
           <div>
-            {loggedIn ? (
+            {user ? (
               <div className="user-info">
                 <span className="user-name-with-space">👤: {user.name}</span>
                 <Button variant="secondary" onClick={handleLogout}>

@@ -10,7 +10,7 @@ import Recipes from "../pages/Recipes";
 import RecipeView from "../pages/RecipeView";
 import Preferences from "../pages/Preferences";
 
-function App({ loggedIn, setLoggedIn }) {
+function App({ loggedIn, setLoggedIn, user }) {
   return (
     <div>
       <Routes>
@@ -27,10 +27,7 @@ function App({ loggedIn, setLoggedIn }) {
         <Route path="/recipes" element={<Recipes />} />
         <Route path="/workouts/:id" element={<WorkoutView />} />
         <Route path="/recipes/:id" element={<RecipeView />} />
-        <Route
-          path="/preferences"
-          element={<Preferences loggedIn={loggedIn} />}
-        />
+        <Route path="/preferences" element={<Preferences user={user} />} />
       </Routes>
     </div>
   );
