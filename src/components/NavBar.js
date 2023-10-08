@@ -29,6 +29,9 @@ function NavBar({ loggedIn, setLoggedIn }) {
             <Nav.Link as={Link} to="/workouts">
               Workouts
             </Nav.Link>
+            <Nav.Link as={Link} to="/recipes">
+              Recipes
+            </Nav.Link>
           </Nav>
           <div>
             {loggedIn ? (

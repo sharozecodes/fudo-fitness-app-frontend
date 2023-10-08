@@ -6,6 +6,7 @@ import Login from "../pages/Login";
 import Workouts from "../pages/Workouts";
 import WorkoutView from "../pages/WorkoutView";
 import Signup from "../pages/Signup";
+import Recipes from "../pages/Recipes";
 
 function App({ loggedIn, setLoggedIn }) {
   const [user, setUser] = useState([]);
@@ -28,6 +29,7 @@ function App({ loggedIn, setLoggedIn }) {
           element={<Signup loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
         />
         <Route path="/workouts" element={<Workouts />} />
+        <Route path="/recipes" element={<Recipes />} />
         <Route path="/workouts/:id" element={<WorkoutView />} />
       </Routes>
     </div>
