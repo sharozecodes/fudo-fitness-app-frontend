@@ -3,29 +3,30 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 
-function WorkoutView() {
+function RecipeView() {
   const { id } = useParams();
 
-  const [workout, setWorkout] = useState(null);
+  const [recipe, setRecipe] = useState(null);
 
   useEffect(() => {
-    fetch(`/workouts/${id}`)
+    fetch(`/recipes/${id}`)
       .then((r) => r.json())
-      .then(setWorkout);
+      .then(setRecipe);
   }, [id]);
 
-  return workout ? (
+  return recipe ? (
     <div className="center-content">
       <div className="img-container">
-        <img src={workout.image_url} alt={workout.title} />
+        <img src={recipe.image_url} alt={recipe.title} />
       </div>
-      <h2>{workout.title}</h2>
-      <p>Category: {workout.category}</p>
-      <p>Duration: {workout.duration} minutes</p>
-      <p>Calories Burnt: {workout.calories_burnt} kcal</p>
+      <h2>{recipe.title}</h2>
+      <p>Category: {recipe.category}</p>
+      <p>Preparation Time: {recipe.prep_time} minutes</p>
+      <p>Calories: {recipe.calories} kCal</p>
+      <p>Protein: {recipe.protein} grams</p>
       <div>
         <strong>Instructions:</strong>
-        {workout.instructions.split("\n").map((line, index) => (
+        {recipe.instructions.split("\n").map((line, index) => (
           <p key={index}>{line}</p>
         ))}
       </div>
@@ -33,9 +34,9 @@ function WorkoutView() {
     </div>
   ) : (
     <div className="center-content">
-      <p>Sorry, the workout data is not available.</p>
+      <p>Sorry, the recipe data is not available.</p>
     </div>
   );
 }
 
-export default WorkoutView;
+export default RecipeView;
