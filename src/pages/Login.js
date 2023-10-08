@@ -29,8 +29,8 @@ function Login({ loggedIn, setLoggedIn }) {
       });
 
       if (!response.ok) {
-        if (response.status === 208) {
-          setStatus("Username already taken");
+        if (response.status === 401) {
+          setStatus("Invalid username/password");
         } else {
           setStatus("Incorrect Password");
         }
@@ -56,15 +56,26 @@ function Login({ loggedIn, setLoggedIn }) {
       >
         {({ isSubmitting, status }) => (
           <Form>
-            {status && <p className="error-message">{status}</p>}
-            <div className="form-group">
+            {status && <p className="error-message red-text">{status}</p>}
+            <div>
               <label htmlFor="username">Username:</label>
-              <Field type="text" id="username" name="username" />
+              <Field
+                className="form-group"
+                type="text"
+                id="username"
+                name="username"
+              />
               <ErrorMessage name="username" component="div" className="error" />
             </div>
-            <div className="form-group">
-              <label htmlFor="password">Password:</label>
-              <Field type="password" id="password" name="password" />
+
+            <div style={{ marginTop: "10px" }}>
+              <label htmlFor="password">Password: </label>
+              <Field
+                className="form-group"
+                type="password"
+                id="password"
+                name="password"
+              />
               <ErrorMessage name="password" component="div" className="error" />
             </div>
             <Button type="submit" disabled={isSubmitting}>
