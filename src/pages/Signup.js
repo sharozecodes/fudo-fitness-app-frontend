@@ -64,6 +64,7 @@ function SignUp({ loggedIn, setLoggedIn }) {
           id="username"
           autoComplete="off"
           {...formik.getFieldProps("username")}
+          style={{ width: "30rem" }}
         />
         {formik.touched.username && formik.errors.username && (
           <div className="alert alert-danger">{formik.errors.username}</div>
@@ -71,7 +72,7 @@ function SignUp({ loggedIn, setLoggedIn }) {
       </div>
       <div className="form-group">
         <label htmlFor="password">Password</label>
-        <div className="input-group">
+        <div className="input-group" style={{ width: "30rem" }}>
           <input
             type={showPassword ? "text" : "password"}
             className="form-control"
@@ -99,6 +100,7 @@ function SignUp({ loggedIn, setLoggedIn }) {
           type="text"
           className="form-control"
           id="name"
+          style={{ width: "30rem" }}
           {...formik.getFieldProps("name")}
         />
         {formik.touched.name && formik.errors.name && (
@@ -110,6 +112,7 @@ function SignUp({ loggedIn, setLoggedIn }) {
           type="submit"
           className="btn btn-primary"
           disabled={formik.isSubmitting}
+          style={{ marginTop: "1rem" }}
         >
           {formik.isSubmitting ? "Loading..." : "Sign Up"}
         </button>
