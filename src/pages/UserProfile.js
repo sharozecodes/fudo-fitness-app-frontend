@@ -20,8 +20,22 @@ function UserProfile({ user }) {
 
       case deleteProfile:
         content = (
-          <div>
-            <h1>Delete Profile</h1>
+          <div className="centered-container">
+            <h3>Are you sure you want to delete your profile?</h3>
+            <div>
+              <Button
+                variant="secondary"
+                style={{ marginRight: "1em" }}
+                onClick={() => {
+                  setDeleteProfile(false);
+                }}
+              >
+                Nevermind
+              </Button>
+              <Button variant="danger" onClick={() => setDeleteProfile(true)}>
+                Yes, I'm positive
+              </Button>{" "}
+            </div>
           </div>
         );
         break;
