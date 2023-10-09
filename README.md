@@ -21,7 +21,7 @@ git clone git@github.com:sharozecodes/fudo-fitness-app-frontend.git
 2. Navigate to the project directory.
 
 ```bash
-cd fudo-frontend
+cd fudo-fitness-app-frontend
 ```
 
 3. Install the necessary dependencies.
