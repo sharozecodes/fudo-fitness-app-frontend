@@ -55,7 +55,7 @@ function SignUp({ loggedIn, setLoggedIn }) {
     setShowPassword(!showPassword);
   };
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form className="centered-container" onSubmit={formik.handleSubmit}>
       <div className="form-group">
         <label htmlFor="username">Username</label>
         <input
