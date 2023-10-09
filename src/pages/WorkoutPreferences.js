@@ -10,7 +10,7 @@ function WorkoutPreferences({ user }) {
   useEffect(() => {
     if (user === null) {
       setErrorMessage("User is null. Please provide a valid user.");
-      return; // Exit early if user is null
+      return;
     }
     fetch(`/users/${user.id}/workouts`)
       .then((response) => {

@@ -2,7 +2,7 @@ import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Button from "react-bootstrap/Button";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function Login({ loggedIn, setLoggedIn }) {
   const initialValues = {
@@ -85,6 +85,12 @@ function Login({ loggedIn, setLoggedIn }) {
           </Form>
         )}
       </Formik>
+      <div style={{ marginTop: "2rem" }}>
+        Not a user?{" "}
+        <Link to="/signup">
+          <Button variant="secondary">Sign up</Button>
+        </Link>
+      </div>
     </div>
   );
 }
