@@ -19,7 +19,6 @@ function UserProfile({ user }) {
       .then((response) => {
         if (response.status === 204) {
           console.log("User deleted successfully");
-          navigate("/");
         } else {
           console.error("Error deleting user");
         }
@@ -27,6 +26,7 @@ function UserProfile({ user }) {
       .catch((error) => {
         console.error("Error deleting user:", error);
       });
+    navigate("/");
   };
 
   let content;
