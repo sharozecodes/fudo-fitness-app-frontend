@@ -8,6 +8,7 @@ import WorkoutView from "../pages/WorkoutView";
 import Signup from "../pages/Signup";
 import Recipes from "../pages/Recipes";
 import RecipeView from "../pages/RecipeView";
+import UserProfile from "../pages/UserProfile";
 import Preferences from "../pages/Preferences";
 import WorkoutPreferences from "../pages/WorkoutPreferences";
 import RecipePreferences from "../pages/RecipePreferences";
@@ -26,6 +27,7 @@ function App({ loggedIn, setLoggedIn, user }) {
           element={<Signup loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
         />
         <Route path="/workouts" element={<Workouts user={user} />} />
+        <Route path="/profile" element={<UserProfile user={user} />} />
         <Route path="/recipes" element={<Recipes user={user} />} />
         <Route path="/workouts/:id" element={<WorkoutView />} />
         <Route path="/recipes/:id" element={<RecipeView />} />

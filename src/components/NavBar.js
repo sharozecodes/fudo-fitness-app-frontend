@@ -59,7 +59,17 @@ function NavBar({ setUser, user }) {
               </Nav.Link>
             ) : (
               <div className="user-info">
-                <span className="user-name-with-space">👤: {user.name}</span>
+                <Link
+                  style={{
+                    textDecoration: "none",
+                    textAlign: "center",
+                    flexGrow: "1",
+                    color: "white",
+                  }}
+                  to="/profile"
+                >
+                  <span className="user-name-with-space">👤: {user.name}</span>
+                </Link>
                 <Button variant="secondary" onClick={handleLogout}>
                   Logout
                 </Button>
