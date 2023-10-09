@@ -1,28 +1,26 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function UserProfile({ user }) {
   const [updateProfile, setUpdateProfile] = useState(false);
   const [deleteProfile, setDeleteProfile] = useState(false);
 
+  const navigate = useNavigate();
+
   const handleDelete = () => {
     if (user === null) {
       return;
     }
-    // Replace 'userId' with the actual user ID or pass it as a prop to UserProfile component
-    const userId = user.id; // Change this to get the user's ID
-
-    // Send a DELETE request to the server to delete the user
+    const userId = user.id;
     fetch(`/users/${userId}`, {
       method: "DELETE",
     })
       .then((response) => {
         if (response.status === 204) {
-          // User deleted successfully, you can perform any necessary actions here
           console.log("User deleted successfully");
+          navigate("/");
         } else {
-          // Handle the error or provide user feedback
           console.error("Error deleting user");
         }
       })
