@@ -6,6 +6,31 @@ function UserProfile({ user }) {
   const [updateProfile, setUpdateProfile] = useState(false);
   const [deleteProfile, setDeleteProfile] = useState(false);
 
+  const handleDelete = () => {
+    if (user === null) {
+      return;
+    }
+    // Replace 'userId' with the actual user ID or pass it as a prop to UserProfile component
+    const userId = user.id; // Change this to get the user's ID
+
+    // Send a DELETE request to the server to delete the user
+    fetch(`/users/${userId}`, {
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (response.status === 204) {
+          // User deleted successfully, you can perform any necessary actions here
+          console.log("User deleted successfully");
+        } else {
+          // Handle the error or provide user feedback
+          console.error("Error deleting user");
+        }
+      })
+      .catch((error) => {
+        console.error("Error deleting user:", error);
+      });
+  };
+
   let content;
 
   if (user) {
@@ -32,7 +57,7 @@ function UserProfile({ user }) {
               >
                 Nevermind
               </Button>
-              <Button variant="danger" onClick={() => setDeleteProfile(true)}>
+              <Button variant="danger" onClick={handleDelete}>
                 Yes, I'm positive
               </Button>{" "}
             </div>
