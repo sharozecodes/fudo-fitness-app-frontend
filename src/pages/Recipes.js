@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 
-function Recipes() {
+function Recipes({ user }) {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
@@ -11,6 +11,28 @@ function Recipes() {
       .then((r) => r.json())
       .then(setRecipes);
   }, []);
+
+  const addToPreferences = (userId, recipeId) => {
+    const data = { recipe_id: recipeId };
+
+    fetch(`/users/${userId}/recipes`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log("Added to preferences successfully");
+        } else {
+          console.error("Failed to add to preferences");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
 
   const recipesArray = recipes.map((recipe) => (
     <Link
@@ -36,7 +58,12 @@ function Recipes() {
           <p>Calories: {recipe.calories}</p>
           <p>Protein: {recipe.protein} g</p>
           <Card.Text>{recipe.description}</Card.Text>
-          <Button variant="primary">Add to Preferences</Button>
+          <Button
+            variant="primary"
+            onClick={() => addToPreferences(user.id, recipe.id)}
+          >
+            Add to Preferences
+          </Button>
         </Card.Body>
       </Card>
     </Link>

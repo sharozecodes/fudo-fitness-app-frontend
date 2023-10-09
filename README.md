@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# FUDO Front End
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to FUDO - Your Fitness and Nutrition App
 
-## Available Scripts
+FUDO is a fitness and nutrition app that provides users with a selection of workouts and recipes to help them achieve their health and wellness goals. With FUDO, you can easily choose your preferred workouts and recipes, and get step-by-step instructions to follow them.
 
-In the project directory, you can run:
+## Getting Started
 
-### `npm start`
+Before you start using the FUDO front end, please ensure that the [FUDO Backend](https://github.com/sharozecodes/fudo-fitness-app) is up and running. Follow the instructions in the backend repository to set it up properly.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To set up the FUDO front end, follow these steps:
 
-### `npm test`
+1. Fork and clone this repository to your local machine.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+git clone git@github.com:sharozecodes/fudo-fitness-app-frontend.git
+```
 
-### `npm run build`
+2. Navigate to the project directory.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+cd fudo-frontend
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Install the necessary dependencies.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install
+```
 
-### `npm run eject`
+4. Start the development server.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The front end will now be accessible at http://localhost:3000 in your web browser.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## How to Use FUDO
 
-## Learn More
+FUDO is designed to be user-friendly. Here's a brief overview of how to use the app:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Sign in or create an account to access personalized content.
+2. Browse through the selection of workouts and recipes.
+3. Select the workouts and recipes that interest you.
+4. Follow the step-by-step instructions provided for your selected workouts and recipes.
+5. Stay on top of your fitness and nutrition goals with FUDO.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributor's Guide
 
-### Code Splitting
+We welcome contributions from the community to make FUDO even better. If you would like to contribute, please follow these steps:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and ensure that the code is properly tested.
+4. Submit a pull request, detailing the changes you've made.
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This project is licensed under the MIT License. You are free to use, modify, and distribute the code as per the terms of the license.
 
-### Making a Progressive Web App
+### Note:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Please make sure to follow the [FUDO Backend](https://github.com/sharozecodes/fudo-fitness-app) Setup Instructions before running the front end to ensure proper functionality.

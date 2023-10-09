@@ -25,8 +25,8 @@ function App({ loggedIn, setLoggedIn, user }) {
           path="/signup"
           element={<Signup loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
         />
-        <Route path="/workouts" element={<Workouts />} />
-        <Route path="/recipes" element={<Recipes />} />
+        <Route path="/workouts" element={<Workouts user={user} />} />
+        <Route path="/recipes" element={<Recipes user={user} />} />
         <Route path="/workouts/:id" element={<WorkoutView />} />
         <Route path="/recipes/:id" element={<RecipeView />} />
         <Route path="/preferences" element={<Preferences user={user} />} />
