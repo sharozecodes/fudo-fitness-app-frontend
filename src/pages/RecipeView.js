@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 function RecipeView() {
   const { id } = useParams();
@@ -30,7 +31,9 @@ function RecipeView() {
           <p key={index}>{line}</p>
         ))}
       </div>
-      <Button>Add to Preference</Button>
+      <Link to="/recipes">
+        <Button variant="secondary">Back</Button>
+      </Link>
     </div>
   ) : (
     <div className="center-content">

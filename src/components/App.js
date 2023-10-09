@@ -16,7 +16,7 @@ function App({ loggedIn, setLoggedIn, user }) {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home user={user} />} />
         <Route
           path="/login"
           element={<Login loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}

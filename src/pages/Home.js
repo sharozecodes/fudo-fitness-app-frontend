@@ -1,6 +1,8 @@
 import React from "react";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-function Home() {
+function Home({ user }) {
   return (
     <div className="centered-container">
       <img
@@ -10,6 +12,22 @@ function Home() {
       />
       <h1 className="app-title">FUDO</h1>
       <p style={{ fontSize: "2rem" }}> Your Fitness Guide</p>
+      <div>
+        {!user || user.error ? (
+          <>
+            <Link to="/login">
+              <Button style={{ marginRight: "2em" }}>Log in</Button>
+            </Link>
+            <Link to="/signup">
+              <Button variant="secondary">Sign up</Button>
+            </Link>
+          </>
+        ) : (
+          <>
+            exclusively for <strong>{user.name}</strong>!
+          </>
+        )}
+      </div>
     </div>
   );
 }
