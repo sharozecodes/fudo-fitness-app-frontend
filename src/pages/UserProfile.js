@@ -35,8 +35,11 @@ function UserProfile({ user }) {
     switch (true) {
       case updateProfile:
         content = (
-          <div>
-            <h1>Update Profile</h1>
+          <div className="centered-container">
+            <h1>
+              {"🧑‍🏭"} Feature under development {"🧑‍🏭"}{" "}
+            </h1>
+            <h3>check back in tomorrow for an update</h3>
           </div>
         );
         break;
