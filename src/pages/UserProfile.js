@@ -13,9 +13,7 @@ function UserProfile({ user }) {
       case updateProfile:
         content = (
           <div>
-            {/* Render content for updateProfile state */}
             <h1>Update Profile</h1>
-            {/* Add your updateProfile content here */}
           </div>
         );
         break;
@@ -23,9 +21,7 @@ function UserProfile({ user }) {
       case deleteProfile:
         content = (
           <div>
-            {/* Render content for deleteProfile state */}
             <h1>Delete Profile</h1>
-            {/* Add your deleteProfile content here */}
           </div>
         );
         break;
@@ -40,10 +36,16 @@ function UserProfile({ user }) {
               What would you want to do today?
             </h3>
             <div>
-              <Button variant="secondary" style={{ marginRight: "1em" }}>
+              <Button
+                variant="secondary"
+                style={{ marginRight: "1em" }}
+                onClick={() => setUpdateProfile(true)}
+              >
                 Update Profile
               </Button>
-              <Button variant="danger">Delete Profile</Button>{" "}
+              <Button variant="danger" onClick={() => setDeleteProfile(true)}>
+                Delete Profile
+              </Button>{" "}
             </div>
           </div>
         );
@@ -52,7 +54,7 @@ function UserProfile({ user }) {
     content = <div></div>;
   }
 
-  return <div>{content}</div>;
+  return <div className="centered-container">{content}</div>;
 }
 
 export default UserProfile;
