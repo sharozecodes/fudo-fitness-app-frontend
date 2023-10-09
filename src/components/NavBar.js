@@ -61,7 +61,7 @@ function NavBar({ setUser, user }) {
               <div className="user-info">
                 <span className="user-name-with-space">👤: {user.name}</span>
                 <Button variant="secondary" onClick={handleLogout}>
-                  Logout {console.log(user)}
+                  Logout
                 </Button>
               </div>
             )}
