@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
@@ -19,9 +19,9 @@ function UserProfile({ user }) {
   };
 
   const validationSchema = Yup.object({
-    username: Yup.string().required("Username is required"),
-    password: Yup.string().required("Password is required"),
-    name: Yup.string().required("Name is required"),
+    username: Yup.string(),
+    password: Yup.string(),
+    name: Yup.string(),
   });
 
   const onSubmit = async (values, { setSubmitting, setFieldError }) => {
@@ -84,13 +84,9 @@ function UserProfile({ user }) {
     switch (true) {
       case updateProfile:
         content = (
-          //   <div className="centered-container">
-          //     <h1>
-          //       {"🧑‍🏭"} Feature under development {"🧑‍🏭"}{" "}
-          //     </h1>
-          //     <h3>check back in tomorrow for an update</h3>
-          //   </div>
           <form className="centered-container" onSubmit={formik.handleSubmit}>
+            <h2>Update the fields you want</h2>
+            <h3>leave blank the ones you don't</h3>
             <div className="form-group">
               <label htmlFor="username">Username</label>
               <input
