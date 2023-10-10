@@ -85,8 +85,10 @@ function UserProfile({ user }) {
       case updateProfile:
         content = (
           <form className="centered-container" onSubmit={formik.handleSubmit}>
-            <h2>Update the fields you want</h2>
-            <h3>leave blank the ones you don't</h3>
+            <h2 style={{ fontStyle: "italic" }}>
+              <strong>UPDATE THE FIELDS YOU WANT</strong>
+            </h2>
+            <p>leave blank the ones you don't</p>
             <div className="form-group">
               <label htmlFor="username">Username</label>
               <input
@@ -149,7 +151,7 @@ function UserProfile({ user }) {
                 disabled={formik.isSubmitting}
                 style={{ marginTop: "1rem" }}
               >
-                {formik.isSubmitting ? "Loading..." : "Sign Up"}
+                {formik.isSubmitting ? "Loading..." : "Update"}
               </button>
             </div>
           </form>
